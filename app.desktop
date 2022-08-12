@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=App
+Exec=app
+Icon=app
+Categories=Development
+Version=1.0
+Type=Application
+Terminal=true

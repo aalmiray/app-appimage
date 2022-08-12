@@ -1,0 +1,27 @@
+project:
+  name: app
+  description: Awesome app is awesome
+  website: https://github.com/aalmiray/app
+  authors:
+    - Andres Almiray
+  license: Apache-2.0
+  extraProperties:
+    inceptionYear: 2022
+
+release:
+  github:
+    overwrite: true
+    skipTag: true
+    changelog:
+      formatted: ALWAYS
+      preset: conventional-commits
+      format: '- {{commitShortHash}} {{commitTitle}}'
+      contributors:
+        format: '- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}'
+      hide:
+        contributors:
+          - 'GitHub'
+
+files:
+  artifacts:
+    - path: 'app-{{projectVersion}}-x86_64.AppImage'
