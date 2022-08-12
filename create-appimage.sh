@@ -28,7 +28,10 @@ unzip -o $DISTRIBUTION_FILE
 # create AppDir structure
 mkdir -p AppDir/
 mkdir -p AppDir/usr/share/
-mv "${DISTRIBUTION_FILE_NAME}/" AppDir/usr/share/${DISTRIBUTION_NAME}
+mv "${DISTRIBUTION_FILE_NAME}" AppDir/usr/share/${DISTRIBUTION_NAME}
+ls -l AppDir/usr/share/${DISTRIBUTION_NAME}
+ls -l AppDir/usr/share/${DISTRIBUTION_NAME}/bin
+ls -l AppDir/usr/share/${DISTRIBUTION_NAME}/lib
 mkdir -p AppDir/usr/bin/
 ln -s AppDir/usr/share/${DISTRIBUTION_NAME}/bin/${DISTRIBUTION_EXEC} AppDir/usr/bin/${DISTRIBUTION_EXEC}
 mkdir -p AppDir/usr/share/applications/
