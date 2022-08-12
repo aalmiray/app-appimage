@@ -21,7 +21,6 @@ wget -c $APPIMAGETOOL_URL
 chmod +x "./appimagetool-${SYSTEM_ARCH}.AppImage"
 
 # download and extract release
-echo ${DISTRIBUTION_URL}
 wget -c -O $DISTRIBUTION_FILE $DISTRIBUTION_URL
 unzip -o $DISTRIBUTION_FILE
 
@@ -29,9 +28,6 @@ unzip -o $DISTRIBUTION_FILE
 mkdir -p AppDir/
 mkdir -p AppDir/usr/share/
 mv "${DISTRIBUTION_FILE_NAME}" AppDir/usr/share/${DISTRIBUTION_NAME}
-ls -l AppDir/usr/share/${DISTRIBUTION_NAME}
-ls -l AppDir/usr/share/${DISTRIBUTION_NAME}/bin
-ls -l AppDir/usr/share/${DISTRIBUTION_NAME}/lib
 mkdir -p AppDir/usr/bin/
 ln -s AppDir/usr/share/${DISTRIBUTION_NAME}/bin/${DISTRIBUTION_EXEC} AppDir/usr/bin/${DISTRIBUTION_EXEC}
 mkdir -p AppDir/usr/share/applications/
@@ -39,6 +35,7 @@ mkdir -p AppDir/usr/share/icons/hicolor/128x128/
 cp ../icons/${DISTRIBUTION_NAME}.png AppDir/usr/share/icons/hicolor/128x128/${DISTRIBUTION_NAME}.png
 mkdir -p AppDir/usr/share/metainfo
 cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo
+cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo/${DISTRIBUTION_NAME}.appdata.xml
 cp ../${DISTRIBUTION_NAME}.desktop AppDir/usr/share/applications
 
 ln -s usr/share/applications/${DISTRIBUTION_NAME}.desktop AppDir/${DISTRIBUTION_NAME}.desktop
@@ -50,6 +47,12 @@ cat > AppDir/AppRun << "EOF"
 #!/usr/bin/env bash
 
 HERE="$(dirname "$(readlink -f "${0}")")"
+
+echo "-----"
+ls -l $HERE
+echo "-----"
+ls -l $HERE/usr/share
+echo "-----"
 
 exec "$HERE/usr/share/app/bin/app" "$@"
 EOF
