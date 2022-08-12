@@ -3,13 +3,12 @@
 # Adapted from https://gist.github.com/neilcsmith-net/69bcb23bcc6698815438dc4e3df6caa3
 # Original script: (c) 2020 Neil C Smith - neil@codelerity.com
 
-shopt -s extglob
-
 SYSTEM_ARCH="x86_64"
 DISTRIBUTION_FILE=" app-${DISTRIBUTION_VERSION}.zip"
-DISTRIBUTION_FILE_NAME=" app-${DISTRIBUTION_VERSION}"
+DISTRIBUTION_FILE_NAME="app-${DISTRIBUTION_VERSION}"
 DISTRIBUTION_NAME="app"
 DISTRIBUTION_EXEC="app"
+DISTRIBUTION_ID="com.acme.app"
 DISTRIBUTION_URL="https://github.com/aalmiray/app/releases/download/v${DISTRIBUTION_VERSION}/${DISTRIBUTION_FILE}"
 APPIMAGETOOL_URL="https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-${SYSTEM_ARCH}.AppImage"
 
@@ -22,6 +21,7 @@ wget -c $APPIMAGETOOL_URL
 chmod +x "./appimagetool-${SYSTEM_ARCH}.AppImage"
 
 # download and extract release
+echo ${DISTRIBUTION_URL}
 wget -c -O $DISTRIBUTION_FILE $DISTRIBUTION_URL
 unzip -o $DISTRIBUTION_FILE
 
@@ -38,8 +38,8 @@ mkdir -p AppDir/usr/share/applications/
 mkdir -p AppDir/usr/share/icons/hicolor/128x128/
 cp ../icons/${DISTRIBUTION_NAME}.png AppDir/usr/share/icons/hicolor/128x128/${DISTRIBUTION_NAME}.png
 mkdir -p AppDir/usr/share/metainfo
-cp ../appdata.xml AppDir/usr/share/metainfo
-cp ../app.desktop AppDir/usr/share/applications/${DISTRIBUTION_NAME}.desktop
+cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo
+cp ../${DISTRIBUTION_NAME}.desktop AppDir/usr/share/applications
 
 ln -s usr/share/applications/${DISTRIBUTION_NAME}.desktop AppDir/${DISTRIBUTION_NAME}.desktop
 ln -s usr/share/icons/hicolor/128x128/${DISTRIBUTION_NAME}.png AppDir/${DISTRIBUTION_NAME}.png
