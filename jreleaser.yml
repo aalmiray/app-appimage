@@ -1,16 +1,15 @@
 project:
   name: app
-  description: Awesome app is awesome
-  website: https://github.com/aalmiray/app
+  description: Awesome App
+  links:
+    homepage: https://acme.com/app
   authors:
-    - Andres Almiray
+    - Duke
   license: Apache-2.0
-  extraProperties:
-    inceptionYear: 2022
+  inceptionYear: 2021
 
 release:
   github:
-    overwrite: true
     skipTag: true
     changelog:
       formatted: ALWAYS

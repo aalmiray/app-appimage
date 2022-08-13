@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with JReleaser 1.2.0-SNAPSHOT at 2022-08-13T11:31:43.583+02:00 -->
 <component type="console-application">
   <id>com.acme.app</id>
+  <name>app</name>
+  <summary>Awesome App</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Apache-2.0</project_license>
-  <name>App</name>
-  <summary>Awesome app is awesome</summary>
   <description>
-    <p>
-    Awesome app is awesome
-    </p>
+    <p>Awesome App is awesome</p>
+
   </description>
   <categories>
     <category>Development</category>
@@ -21,14 +21,18 @@
       <url>https://github.com/aalmiray/app/releases/tag/v1.0.0</url>
     </release>
   </releases>
-  <developer_name>Andres Almiray</developer_name>
+  <developer_name>Duke</developer_name>
   <screenshots>
      <screenshot type="default">
-     <caption>App in action</caption>
-     <image>https://jreleaser.org/images/app-full-release-command.png</image>
-    </screenshot>
+       <type>source</type>
+       <image>https://acme.com/app/app.png</image>
+       
+       
+       
+     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
-  <url type="homepage">https://githum.com/aalmiray/app/</url>
+  <url type="homepage">https://acme.com/app</url>
   <url type="bugtracker">https://github.com/aalmiray/app/issues</url>
+  <url type="vcs-browser">https://github.com/aalmiray/app</url>
 </component>
