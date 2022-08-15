@@ -20,7 +20,7 @@ cd build-${SYSTEM_ARCH}/
 # download AppImage tool
 wget -c $APPIMAGETOOL_URL
 if [ ! -f "$APPIMAGETOOL_FILE" ]; then
-    echo "${APPIMAGETOOL_FILE} does not exist."
+    echo "ERROR: ${APPIMAGETOOL_FILE} does not exist."
     exit 1
 fi
 chmod +x "$APPIMAGETOOL_FILE"
@@ -28,18 +28,18 @@ chmod +x "$APPIMAGETOOL_FILE"
 # download and extract release
 wget -c -O $DISTRIBUTION_FILE $DISTRIBUTION_URL
 if [ ! -f "$DISTRIBUTION_FILE" ]; then
-    echo "${DISTRIBUTION_FILE} does not exist."
+    echo "ERROR: ${DISTRIBUTION_FILE} does not exist."
     exit 1
 fi
 
-if [[ "$DISTRIBUTION_FILE" = *.zip ]]; then
+if [ "$DISTRIBUTION_FILE" = *.zip ]; then
   unzip -o $DISTRIBUTION_FILE
 else
   tar -xvf $DISTRIBUTION_FILE
 fi
 
 if [ ! -d $DISTRIBUTION_FILE_NAME ]; then
-  echo "${DISTRIBUTION_FILE_NAME} does not exist"
+  echo "ERROR: ${DISTRIBUTION_FILE_NAME} does not exist"
   exit 1
 fi
 
