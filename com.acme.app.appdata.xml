@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with JReleaser 1.2.0-SNAPSHOT at 2022-08-13T11:31:43.583+02:00 -->
+<!-- Generated with JReleaser 1.2.0-SNAPSHOT at 2022-08-15T19:50:55.119+02:00 -->
 <component type="console-application">
   <id>com.acme.app</id>
   <name>app</name>
@@ -8,7 +8,6 @@
   <project_license>Apache-2.0</project_license>
   <description>
     <p>Awesome App is awesome</p>
-
   </description>
   <categories>
     <category>Development</category>
@@ -21,14 +20,11 @@
       <url>https://github.com/aalmiray/app/releases/tag/v1.0.0</url>
     </release>
   </releases>
-  <developer_name>Duke</developer_name>
+  <developer_name>Duke McDuke</developer_name>
   <screenshots>
      <screenshot type="default">
-       <type>source</type>
-       <image>https://acme.com/app/app.png</image>
        
-       
-       
+       <image type="source">https://acme.com/app/app.png</image>
      </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
